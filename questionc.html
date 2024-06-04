@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שאלה</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="main.html"><button class="back_button">בחזרה</button></a>
+  <div style="text-align: center;">
+    <h1 id="ques">none</h1>
+    <form action="/submit" method="post">
+      <label id="check1"></label><input type="radio" name="option" id="checkin1"><br/><br/>
+      <label id="check2"></label><input type="radio" name="option" id="checkin2"><br/><br/>
+      <label id="check3"></label><input type="radio" name="option" id="checkin3"><br/><br/>
+      <label id="check4"></label><input type="radio" name="option" id="checkin4"><br/><br/>
+    </form>
+    <br/>
+    <br/>
+    <button onclick="check_answer()" class="check_button">בדיקה</button>
+  </div>
+
+  <script>
+    const ques = localStorage.getItem("ques");
+    const stuff = [
+      0,
+      1,
+      [":הרצל גדל בתרבות ה", 1, "שלישית", "8", ["אמריקאית", "גרמנית", "הולנדית", "סקוטית"]
+      ],3,[
+        "מתי הוצעה הצעת בלפור?", 3, "חמישית", "7", ["ב5 בנובמבר 1912", "ב29 בינואר 1909", "ב15 בספטמבר 1925", "ב2 בנובמבר 1917"]
+      ],[
+        "באיזה בית ספר אליעזר בן יהודה לימד בישראל?", 1, "שישית", "3", ["ריאלי", "אליאנס (כל ישראל חברים)", "הפתוח", "חרשופים"]
+      ],6,[
+        "איפה התכנס הקונגרס הציוני הראשון?", 0, "שמינית", "9", ["בבאזל, שוויץ", "לונדון, אנגליה", "ירושלים, בישראל", "בברצלונה, ספרד"]
+      ]
+      ];
+    const true_ans = stuff[ques];
+    document.getElementById("check1").innerHTML = true_ans[4][0];
+    document.getElementById("check2").innerHTML = true_ans[4][1];
+    document.getElementById("check3").innerHTML = true_ans[4][2];
+    document.getElementById("check4").innerHTML = true_ans[4][3];
+    document.getElementById("ques").innerHTML = true_ans[0];
+    console.log(ques)
+
+    function check_answer(){
+      var answer;
+      for (i=1; i<=4; i++){
+        if (document.getElementById("checkin"+String(i)).checked){
+          answer = i-1;
+        }
+      }
+      if (answer == true_ans[1]){
+        alert("נכון! האות ה" + String(true_ans[2]) + " היא " + String(true_ans[3]) + ".");
+      }else{
+        alert("תשובה שגויה");
+      }
+    }
+  </script>
+</body>
+</html>

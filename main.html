@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חדר בריחה</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('pics/office.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .paper{
+      width: 100px;
+      height: 100px;
+    }
+
+  </style>
+  <script>
+    function set_ques(num){
+      localStorage.setItem("ques", num)
+    }
+  </script>
+</head>
+<body>
+  <a href="question.html">
+    <img src="pics/paper.png" onclick="set_ques(0)" class="paper" style="margin-top: 220px; margin-left: 670px;"><br/>
+    <img src="pics/paper.png" onclick="set_ques(1)" class="paper" style="margin-top: 20px; margin-left: 1150px;">
+  </a><br/>
+
+  <a href="questionc.html"><img src="pics/paper.png" onclick="set_ques(2)" class="paper" style="margin-left: 470px;"></a>
+
+  <a href="question.html"><img src="pics/paper.png" onclick="set_ques(3)" class="paper" style="margin-top: 0px; margin-left: 200px;"></a><br/>
+
+  <a href="questionc.html">
+    <img src="pics/paper.png" onclick="set_ques(4)" class="paper" style="margin-top: 10px; margin-left: 300px;">
+    <img src="pics/paper.png" onclick="set_ques(5)" class="paper" style="margin-bottom: 10px; margin-left: 500px;">
+  </a>
+
+  <a href="question.html"><img src="pics/paper.png" onclick="set_ques(6)" class="paper" style="margin-left: 500px; margin-bottom: 80px;"></a>
+
+  <a href="vault.html"><img src="pics/vault.png" style="margin-left: 100px; width: 150px; height: 150px;" class="vault"></a>
+  <a href="questionc.html"><img src="pics/paper.png" onclick="set_ques(7)" style="margin-left: 200px; height: 150px; width: 150px;"></a>
+  <br/>
+</body>
+</html>

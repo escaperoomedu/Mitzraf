@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שאלה</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="main.html"><button class="back_button">בחזרה</button></a>
+  <div style="text-align: center;">
+    <h1 id="ques">none</h1>
+    <button onclick="check_answer()" class="check_button">בדיקה</button>
+    <input type="text", id="text_input">
+  </div>
+
+  <script>
+    ques = localStorage.getItem("ques");
+    stuff = [
+      ["?באיזו שנה נולד הרצל", "1860", "ראשונה", "2"],
+      ["?באיזו מאה החלה המהפכה הציונית", "19", "שניה", "5"],
+      2,
+      ["?מה הייתה התנועה הציונית הראשונה", "חיבת ציון", "רביעית", "4"],
+      4,
+      5,
+      ["?באיזו שנה אליעזר בן יהודה הקים את העיתון הצבי ", "1884", "שבעית", "7"]
+    ];
+    true_ans = stuff[ques];
+
+    document.getElementById("ques").innerHTML = true_ans[0]
+
+    function check_answer(){
+      const answer = document.getElementById("text_input").value;
+      
+      if (answer.includes(true_ans[1])){
+        alert("נכון! האות ה" + String(true_ans[2]) + " היא " + String(true_ans[3]) + ".")
+      }else{
+        alert("תשובה שגויה")
+      }
+    }
+  </script>
+</body>
+</html>

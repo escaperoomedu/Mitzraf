@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function check_answer(){
+      const ans = document.getElementById("code").value;
+      if (ans == "25847379"){
+        alert("הקוד נכון! כל הכבוד לכם, הצלחתם לפתוח את הכספת")
+      }else{
+        alert("קוד שגוי")
+      }
+    }
+  </script>
+</head>
+<body style="background-image: url(pics/vb.jpg);">
+  <a href="main.html"><button class="back_button">חזרה</button></a>
+  <div style="text-align: center;">
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">הכנס קוד</h1>
+    <input type="number" id="code">
+    <button onclick="check_answer()" class="check_button">בדיקה</button>
+  </div>
+</body>
+</html>
